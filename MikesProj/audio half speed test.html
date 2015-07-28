@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+
+<audio controls loop>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+<body>
+    <button onclick="getPlaySpeed()" type="button">What is the playback speed?</button>
+    <button onclick="setPlaySpeed()" type="button">Play audio in half speed</button>
+    <button onclick="setPlaySpeed2()" type="button">Play audio 2x speed</button>
+    <button onclick="enableLoop()" type="button">Loop this track, yo</button>
+    <button onclick="disableLoop()" type="button">Stop the loop, I'm getting motion sick.</button>
+    <br>
+    <audio id="beatz120" controls>
+        <source src="beatz120.mp3" type="audio/mp3">
+        <source src="beatz120.aif" type="audio/aif"> Your browser does not support HTML5 audio or whatever.
+        </audio>
+        <script>
+        var beatz120 = document.getElementById("beatz120");
+
+        function getPlaySpeed() {
+            alert(beatz120.playbackRate);
+        }
+
+        function setPlaySpeed() {
+            beatz120.playbackRate = 0.5;
+        }
+
+        function setPlaySpeed2() {
+            beatz120.playbackRate = 2;
+        }
+
+        function enableLoop() {
+            beatz120.loop = true;
+            beatz120.load();
+        }
+
+        function disableLoop() {
+            beatz120.loop = false;
+            beatz120.load();
+        }
+
+        function checkLoop() {
+            alert(beatz120.loop);
+        }
+        </script>
+</body>
+
+</html>

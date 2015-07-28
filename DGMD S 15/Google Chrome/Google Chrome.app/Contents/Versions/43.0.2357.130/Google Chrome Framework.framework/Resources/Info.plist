@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BreakpadProduct</key>
+	<string>Chrome_Mac</string>
+	<key>BreakpadProductDisplay</key>
+	<string>Chrome</string>
+	<key>BreakpadReportInterval</key>
+	<string>3600</string>
+	<key>BreakpadSendAndExit</key>
+	<string>YES</string>
+	<key>BreakpadSkipConfirm</key>
+	<string>YES</string>
+	<key>BreakpadURL</key>
+	<string>https://clients2.google.com/cr/report</string>
+	<key>BreakpadVersion</key>
+	<string>43.0.2357.130</string>
+	<key>BuildMachineOSBuild</key>
+	<string>13F1066</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>Google Chrome Framework</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.google.Chrome.framework</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>FMWK</string>
+	<key>CFBundleShortVersionString</key>
+	<string>43.0.2357.130</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>2357.130</string>
+	<key>DTSDKBuild</key>
+	<string>10M2518</string>
+	<key>DTSDKName</key>
+	<string>macosx10.6</string>
+	<key>DTXcode</key>
+	<string>0511</string>
+	<key>DTXcodeBuild</key>
+	<string>5B1008</string>
+	<key>SCMRevision</key>
+	<string>63604fa432251787f36c22fb5a521bfcff929ae0-refs/branch-heads/2357@{#484}</string>
+</dict>
+</plist>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+	
+	div {
+		width:200px;
+		height: 200px;
+		border-radius: 50%;
+		display: inline-block;
+		
+	}
+
+	div:hover {
+		background-color: black;
+	}
+
+	#firstCircle {
+		position: absolute;
+		top: 50px;
+		left: 50px;
+		z-index: 10;
+	}
+	</style>
+
+</head>
+
+<body>
+
+	<script>
+		var getRandomColor = function() {
+			var red =Math.floor(Math.random()*255);
+			var green =Math.floor(Math.random()*255);
+			var blue =Math.floor(Math.random()*255);
+
+			return 'rgb(' + [red, green, blue].join(',') + ')'
+				;
+		};
+		for (var i = 0; i < 50; i = i+1) {
+			var myCircle = document.createElement('div');
+			myCircle.style.backgroundColor = getRandomColor();
+			document.body.appendChild(myCircle);
+		}
+
+	</script>
+	
+</body>
+</html>

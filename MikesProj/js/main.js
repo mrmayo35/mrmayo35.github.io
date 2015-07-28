@@ -32,7 +32,7 @@ var recIndex = 0;
 */
 
 function saveAudio() {
-    audioRecorder.exportWAV( doneEncoding );
+    audioRecorder.exportMonoAIF( doneEncoding );
     // could get mono instead by saying
     // audioRecorder.exportMonoWAV( doneEncoding );
 }
@@ -48,11 +48,12 @@ function gotBuffers( buffers ) {
 }
 
 function doneEncoding( blob ) {
-    Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".wav" );
+    Recorder.setupDownload( blob, "myRecording" + ((recIndex<10)?"0":"") + recIndex + ".aif" );
     recIndex++;
 }
 
-function toggleRecording( e ) {
+function toggleRecording( e ) 
+{ console.log("function working maybe");
     if (e.classList.contains("recording")) {
         // stop recording
         audioRecorder.stop();

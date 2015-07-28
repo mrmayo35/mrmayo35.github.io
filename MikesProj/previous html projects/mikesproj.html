@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' type="text/css" href="css/stylesmike1.css">
+    <script src="js/audiodisplay.js"></script>
+    <script src="js/recorder.js"></script>
+    <script src="js/main.js"></script>
+    <style>
+    button {
+        background-color: #ccc;
+    }
+    </style>
+</head>
+
+<body background="denalimeter1.jpg">
+    <h1>U-rap</h1>
+    <h2>Mike's Project</h2>
+    <p>Click record, say a word, press stop</p>
+    
+    <!--3 buttons:-->
+    <!--record audio button-->
+    <button style="height:20px; width:100px" type="button" button type="button" id="recordbutton" name="recordbutton" value="recordbutton">
+        <'Record'>
+            <audio controls="controls">
+    </button>
+    <p></p>
+    <p></p>
+
+    <!--stop audio button-->
+    <button style="height:20px; width:100px" type="button" button type="button" id="stopbutton" name="stopbutton" value="stopbutton">
+        <'Stop!'>
+            <audio controls="controls">
+    </button>
+    <p></p>
+    <p></p>
+  
+    <!--play audio button-->
+    <button style="height:20px; width:100px" type="button" button type="button" id="playbutton" name="playbutton" value="playbutton">
+        <'PLAY'>
+            <audio controls="controls">
+    </button>
+    <p></p>
+    <p></p>
+
+
+
+    <div id="viz">
+        <canvas id="analyser" width="500" height="250"></canvas>
+        <canvas id="wavedisplay" width="500" height="250"></canvas>
+    </div>
+
+        <script>
+        
+        function a() {
+            alert("you clicked record!");
+        }
+
+        document.querySelector("#recordbutton").addEventListener('click', a);
+
+        function b() {
+            alert("you clicked stop!")
+        }
+        document.querySelector("#stopbutton").addEventListener('click', b);
+
+       function c() {
+            alert("you clicked play!")
+         }
+        document.querySelector("#playbutton").addEventListener('click', c);
+
+        </script>
+
+</body>
+
+</html>

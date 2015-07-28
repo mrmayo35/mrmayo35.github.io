@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <script src='./js/recorderjs/recorder.js'></script>
+</head>
+
+<body>
+    <button id='record'>Record</button>
+    <button id='stop'>Stop</button>
+
+    <script>
+    window.addEventListener("load", function() { // When the window is done loading (you can read more about the load event for the window at https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload)
+        var context = new window.AudioContext(); // Create a new AudioContext (a blob of code for processing audio)
+        // we need these variables for later use with the stop function
+        var mediaStream;
+        var rec;
+        function record() {
+            // ask for permission and start recording
+            navigator.webkitGetUserMedia({
+                audio: true
+            }, function(localMediaStream) {
+                mediaStream = localMediaStream;
+                // create a stream source to pass to Recorder.js
+                var mediaStreamSource = context.createMediaStreamSource(localMediaStream);
+                // create new instance of Recorder.js using the mediaStreamSource
+                rec = new Recorder(mediaStreamSource, {
+                    // pass the path to recorderWorker.js file here
+                    workerPath: './js/recorderjs/recorderWorker.js'
+                });
+                // start recording
+                rec.record();
+            }, function(err) { // If we catch an error
+                console.log('Browser not supported');
+            });
+        }
+        function stop() {
+            // stop the media stream
+            mediaStream.stop();
+            // stop Recorder.js
+            rec.stop();
+            // export it to WAV
+            rec.exportWAV(function(e) {
+                rec.clear();
+                Recorder.forceDownload(e, "alectest.wav");
+            });
+        }
+        // add the eventListeners to catch clicks and trigger our record and stop functions
+        document.querySelector("#record").addEventListener('click', record);
+        document.querySelector("#stop").addEventListener('click', stop);
+
+    
+    });
+    </script>
+</body>
+
+</html>

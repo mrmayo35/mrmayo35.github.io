@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+<head>
+	<!--fixes the character encoding issue causing hypens, etc. to appear as special characters-->
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+	<!-- imports Arvo font from Google Fonts, so it can be assigned through CSS -->
+	<link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+
+	<link rel='stylesheet' type="text/css" href="./voiceapp.css">
+
+
+</head>
+
+<body>
+
+<div id="splash-toggle">CAM/MAP</div>
+
+<!-- <div id="alt-splash">
+  <div id="alt-wrapper">
+    <h1 id="alt-site-title">while i was away pomes</h1> 
+    <p>Place a card in the view of your computer's built-in camera. <br> Center it as best you can, and make sure the frame is as well-lit as possible. <br> Click "Identify Card" to see where the card will send you in the collection of poems and trips below.</p>
+    <span class="media-wrapper">
+      <video id="video"></video>
+      <span class="overlay">Center your card here so it fills the screen.</span>
+    </span>
+    <span class="media-wrapper">
+      <canvas id="canvas"></canvas>
+      <span class="overlay">The picture captured from your card will appear here.</span>
+    </span>
+    <br>
+    <button id="startbutton">Take Photo</button>
+  </div>
+</div>
+
+
+
+<div id="splash">
+<div id="site-title-bg">
+<h1 class="site-title" id="site-title-pt1">while i was</h1> 
+<h1 class="site-title" id="site-title-pt2">away pomes</h1>
+</div>
+
+<div id="map-canvas"></div> <!--google maps object -->
+</div><!--splash-->
+
+<ul id="nav">
+<li class="nav_button"><a href="#um">um</a></li>
+<li class="nav_button"><a href="#like">like</a></li>
+<li class="nav_button"><a href="#swears">swears</a></li>
+<li class="nav_button"><a href="#question">question</a></li>
+<li class="nav_button"><a id="top" href="#splash">To Top</a></li>
+</ul>
+
+<div id="content">
+
+<div id="black" class="trip">
+<h1 id="instructions"><a href="#instructions">Like, um, this is what to, like, do</a></h1>
+<div class="pome-block" id="2014-07-18-0919-DETROIT-KP">
+<h2><a href="#">Step One</a></h2>
+<div class="voiceapp">
+Test Your Audio Connection
+	</div>
+				<ol>
+			<li><meter min="0" max="100" value="25">25%</meter></li>
+			<dd><meter min="0" max="100" value="25" optimum="30" title="millimeters">25mm</meter></dd>
+			</dl>
+				<video id="sampleMovie" src="meter.mov" autoplay></video>
+	</div>
+
+<div class="pome-block" id="2014-07-19-0049-DETROIT-SD">
+<h2><a href="#">Step Two</a></h2>
+<div class="voiceapp">
+Select Filters
+
+		<select>
+		   <option>Um</option>
+		</select>
+		<select>
+		   <option>Like</option>
+		</select>
+		<select>
+		   <option>Swears</option>
+		</select>
+		<select>
+		   <option>Ending with a quesion?</option>
+		</select>
+</div>
+</div>
+
+<div class="pome-block" id="2014-07-19-1818-DETROIT-KP">
+<h2><a href="#">Step Three</a></h2>
+<div class="voiceapp">
+Hit The start button
+</div>
+
+			<object id="external_source" type="text/html" data="" width="1px" height="1px">
+	</object>
+
+	<button id="button1" type="button">Start!</button>
+
+	<script async type="application/dart" src="dartScript.dart"></script>
+	<script async src="packages/browser/dart.js"></script>
+	</div>
+
+<div class="pome-block" id="2014-07-20-0004-DETROIT-SD">
+<h2><a href="#">View Results</a></h2>
+<div class="voiceapp">
+VIEW RESULTS
+
+<img src="ducks.jpg">
+
+</div>
+</div>
+</div>
+</div>
+</div><!-- trip -->
+
+
+</div> <!-- content -->
+
+</body>
+
+<script type="text/javascript" src="./voiceapp.js"></script>
+
+</html>

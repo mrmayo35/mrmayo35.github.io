@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' type="text/css" href="css/stylesmike1.css">
+    <script src="./js/recorderjs/recorder.js"></script>
+    <script src="./js/main.js"></script>
+    <style>
+    button {
+        background-color: green;
+    }
+    </style>
+</head>
+
+<body background="denalimeter1.jpg">
+    <h1>U-rap</h1>
+    <h2>Mike's Project, v03</h2>
+    <p>You have two seconds to record a single word</p>
+    <p>Click record, say a word, press stop</p>
+    <!--<div id="viz">
+                <script src="js/audiodisplay.js"></script>
+                <script src="js/main.js"></script>
+                <canvas id="analyser" width="100" height="150"></canvas>
+                <canvas id="wavedisplay" width="100" height="150"></canvas>
+                -->
+
+             <div id="viz">
+        <script src="js/audiodisplay.js"></script>
+        <script src="js/main.js"></script>
+        <canvas id="analyser" width="500" height="250"></canvas>
+        <canvas id="wavedisplay" width="500" height="250"></canvas>
+    </div>
+
+    <!--record audio button-->
+    <button type="button" button type="button" id="recordbutton" name="recordbutton" value="recordbutton">
+        Record
+    </button>
+    <p></p>
+    <!--stop audio button-->
+    <button type="button" button type="button" id="stopbutton" name="stopbutton" value="stopbutton">
+        Stop Recording
+        <audio>
+    </button>
+    <p></p>
+    <!--play audio button-->
+    <button onclick="setPlaySpeed()" type="button" id="playbutton" name="playbutton" value="playbutton">
+        Play U-rap
+        <audio id='beatz120'>
+            <source src="beatz120.mp3" "u-rap*.mp3" type="audio/mp3">
+            <source src="beatz120.aif" type="audio/aif"> Your browser does not support the audio tag.
+        </audio>
+    </button>
+    <p></p>
+    <!--LOOP U-rap-->
+    <button loop onclick="setPlaySpeed4()" type="button" id="loopbutton" name="loopbutton" value="loopbutton">
+        Loop U-rap
+        <audio loop id='beatzloop'>
+            <source src="beatz120.mp3" type="audio/mp3">
+            <source src="beatz120.aif" type="audio/aif"> Your browser does not support the audio tag.
+        </audio>
+    </button>
+    <p></p>
+    <!--Play U-rap half speed-->
+    <button onclick="setPlaySpeed2()" id='slowbutton' type="button" button type="button" id="slowbutton" name="slowbutton" value="slowbutton">
+        Slow U-rap !
+        <audio id='beatzslow'>
+            <source src="beatz120.mp3" type="audio/mp3">
+            <source src="beatz120.aif" type="audio/aif"> Your browser does not support the audio tag.
+        </audio>
+    </button>
+    <p></p>
+    <p></p>
+    <!-- Play U-rap fast speed-->
+    <button onclick="setPlaySpeed3()" type="button" id="fastbutton" name="fastbutton" value="fastbutton">
+        Fast U-rap !
+        <audio id='beatzfast'>
+            <source src="beatz120.mp3" type="audio/mp3">
+            <source src="beatz120.aif" type="audio/aif"> Your browser does not support the audio tag.
+        </audio>
+    </button>
+    <p></p>
+    <p></p>
+    <!--this button will play all three speeds at once-->
+    <button onclick="setPlaySpeed5()" type="button" id="mixbutton" name="mixbutton" value="mixbutton">
+        Mix U's-rap !
+        <audio id='beatzmix'>
+            <source src="beatz120.mp3" "beatz90.mp3" "beatz180.mp3" type="audio/mp3">
+        </audio>
+    </button>
+    <!--stop all audio function-->
+    <button onclick="stopaudio()" type="button" id="noaudiobutton" name="noaudiobutton" value="noaudiobutton">
+        Stop Audio
+        <audio id='noaudiobutton'>
+        </audio>
+    </button>
+    <source>
+    <!-- <source src="beatz120.aif" type="audio/aif"> Your browser does not support the audio tag.
+        </audio>
+    </button>
+    <p></p>
+    <p></p>
+
+    <!-- VISUALIZER? I dont even know her-->
+    
+    <script>
+    //NORMAL SPEED SCRIPT, use for play and for loop
+    function setPlaySpeed() {
+        console.log("setPlaySpeed");
+        var beatz120 = document.getElementById("beatz120");
+        beatz120.playbackRate = 1;
+        beatz120.play();
+
+    }
+    //SLOW SPEED SCRIPT
+    function setPlaySpeed2() {
+        console.log("setPlaySpeed");
+        var beatzslow = document.getElementById("beatzslow");
+        beatzslow.playbackRate = .5;
+        beatzslow.play();
+
+    }
+
+    //FAST SPEED SCRIPT
+    function setPlaySpeed3() {
+        console.log("setPlaySpeed3");
+        var beatzfast = document.getElementById("beatzfast");
+        beatzfast.playbackRate = 1.5;
+        beatzfast.play();
+
+    }
+    //LOOP SCRIPT
+    // function enableLoop() {
+    //       beatz120.loop = true;
+    //     beatz120.load();
+    // }
+
+    function setPlaySpeed4() {
+        console.log("setPlaySpeed");
+        var beatz120 = document.getElementById("beatz120");
+        beatz120.loop = true;
+        beatz120.playbackRate = 1;
+        beatz120.play();
+
+    }
+
+    //mix 3 speeds and playback at same time
+    function setPlaySpeed5() {
+        console.log("setPlaySpeed");
+        var beatz120 = document.getElementById("beatz120");
+        beatz120.playbackRate = 1;
+        beatz120.play();
+
+        var beatzslow = document.getElementById("beatzslow");
+        beatzslow.playbackRate = .5;
+        beatzslow.play();
+
+        var beatzfast = document.getElementById("beatzfast");
+        beatzsfast.playbackRate = 1.5;
+        beatzsfast.play();
+
+
+    }
+    //stop function maybe
+    //Stop ALL AUDIO, not just 'stop recording'
+
+
+    function stopAudio() {
+        if (my_media) {
+            my_media.stop();
+        }
+        clearInterval(mediaTimer);
+        mediaTimer = null;
+    }
+
+
+
+
+    window.addEventListener("load", function() { // When the window is done loading (you can read more about the load event for the window at https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload)
+        var beatz120 = document.getElementById("beatz120");
+        document.getElementById('beatz120').addEventListener('click', function() {
+            setPlaySpeed();
+
+        })
+
+        var context = new window.AudioContext(); // Create a new AudioContext (a blob of code for processing audio)
+        // we need these variables for later use with the stop function
+        var mediaStream;
+        var rec;
+
+        //define record function
+        function record() {
+            // ask for permission and start recording
+            navigator.webkitGetUserMedia({
+                audio: true
+            }, function(localMediaStream) {
+                mediaStream = localMediaStream;
+                // create a stream source to pass to Recorder.js
+                var mediaStreamSource = context.createMediaStreamSource(localMediaStream);
+                // create new instance of Recorder.js using the mediaStreamSource
+                rec = new Recorder(mediaStreamSource, {
+                    // pass the path to recorderWorker.js file here
+                    workerPath: 'js/recorderjs/recorderWorker.js'
+                });
+                // start recording
+                rec.record();
+            }, function(err) { // If we catch an error
+                console.log('Browser not supported');
+            });
+        }
+
+        //define STOP function
+        function stop() {
+            // stop the media stream
+            mediaStream.stop();
+            // stop Recorder.js
+            rec.stop();
+            // export it to WAV
+            rec.exportWAV(function(e) {
+                rec.clear();
+                //Recorder.forceDownload(e, "filename.wav"); 
+                Recorder.forceDownload(e, "u-rap.wav");
+            });
+        }
+
+
+
+        //define PLAY function - i dont have this, i need to find it, play what was just recorded in record function plus mybeat.aif 
+        //function play() {
+
+
+        //}
+
+
+        function a() {
+            // alert("you clicked record!");
+            record();
+        }
+
+        document.querySelector("#recordbutton").addEventListener('click', a);
+
+        function b() {
+            // alert("you clicked stop!");
+            stop();
+        }
+        document.querySelector("#stopbutton").addEventListener('click', b);
+
+        //function c() {
+        // alert("you clicked play!");
+        //play();
+        //}
+        //document.querySelector("#playbutton").addEventListener('click', c);
+
+        //half speed function
+    });
+    </script>
+</body>
+
+</html>

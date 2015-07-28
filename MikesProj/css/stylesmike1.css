@@ -1,37 +1,120 @@
 body {
-    color: brown;
-    background-color: grey;
-    font-size: 30px;
+    color: 172374;
+    background-color: 333349;
+    font-size: 2em;
     font-family: Helvetica, Arial, Calibri, sans-serif;
-    margin-right: 4em;
-    margin-left: 4em;
+    margin-right: 19em;
+    margin-left: 19em;
+    justify-content: right;
+
+}
+
+
+
+button {
+
+    font-size: .8em;
+    font-family: arial;
+    font-style: thin;
+    width: 15em;
+    height: 2.5em;
+    float: left;
+    margin: .4em;
+    z-index: 1000;
+
 }
 
 #viz {
-    height: 80%;
-    width: 100%;
+    height: 90%;
+    width: 140%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
+    position: absolute;
+    left: 50px;
+    top: 700px;
+    z-index: 500;
 }
 
-#record {
-    height: 40%;
-    width: 101%;
+
+
+#recordbutton {
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: red;
+    background-color: #F50C0C;
+    
 }
 
 #playbutton {
-    height: 40%;
-    width: 101%;
+    
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: green;
+    background-color: #0BCF04;
+   
+}
+
+#stopbutton {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F50C0C;
+}
+
+#slowbutton {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #00E3E3;
+}
+
+#fastbutton {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #EB9E31;
+}
+#loopbutton {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #3689FF;
+}
+
+
+#mixbutton {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+}
+
+#noaudiobutton {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FF9999;
+}
+/*change color on button click */
+button:on-click{
+    background-color: black;
+
+
 }
